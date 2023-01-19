@@ -7,7 +7,6 @@ in vec4 Color;
 in vec2 UV0;
 in ivec2 UV2;
 
-uniform sampler2D Sampler0;
 uniform sampler2D Sampler2;
 
 uniform mat4 ModelViewMat;
@@ -25,9 +24,10 @@ void main() {
     vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
     vertexColor = Color * texelFetch(Sampler2, UV2 / 16, 0);
     texCoord0 = UV0;
-    if (Color.xyz == vec3(78/255., 92/255., 36/255.) && Position.z == 0.03) {
-        vertexColor = texelFetch(Sampler2, UV2 / 16, 0); // remove color from no shadow marker
+    // NoShadow behavior (https://github.com/PuckiSilver/NoShadow)
+    if (Color.xyz == vec3(78/255., 92/255., 36/255.) && (Position.z == 0.03 || Position.z == 0.06 || Position.z == 0.12)) {
+        vertexColor.rgb = texelFetch(Sampler2, UV2 / 16, 0).rgb; // remove color from no shadow marker
     } else if (Color.xyz == vec3(19/255., 23/255., 9/255.) && Position.z == 0) {
-        vertexColor = vec4(0); // remove shadow
+        gl_Position = vec4(2,2,2,1); // move shadow off screen
     }
 }
