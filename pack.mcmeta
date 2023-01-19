@@ -1,6 +1,6 @@
 {
   "pack": {
-    "pack_format": 9,
+    "pack_format": 12,
     "description": "Remove shadows with color #4e5c24 (78, 92, 36)"
   }
 }
