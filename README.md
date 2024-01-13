@@ -6,7 +6,7 @@ By setting the **text color** to `#4e5c24` (78, 92, 36) the shadow of the text w
 
 This **restores the behavior** of old minecraft versions and allows you to, for example, [create custom GUIs](https://www.youtube.com/watch?v=EL2X6ppZSCQ).
 
-The **only text that is modified** by this shader is text in the `actionbar`, `title` or `subtitle`.
+The **text that is modified** by this shader is text in the actionbar, subtitle, title, chat, advancement screen and in item names and lore.
 
 ## **Usage**
 A command could look like this:
