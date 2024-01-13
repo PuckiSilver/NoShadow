@@ -14,7 +14,7 @@ A command could look like this:
 title @s actionbar [{"text":"This text has shadow ","color":"white"},{"text":"but this text does not :D","color":"#4e5c24"}]
 ```
 
-Feel free to take the [shader file](assets/minecraft/shaders/core/rendertype_text.vsh) and drop it into **your resource pack**.
+Feel free to take the [shader files](assets/minecraft/shaders/core/) and drop them into **your resource pack**.
 
 [**Credit** is not needed](LICENSE) but always appreciated.
 
