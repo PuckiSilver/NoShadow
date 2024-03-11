@@ -1,6 +1,9 @@
 # **NoShadow**
 Just a simple shader to remove actionbar and title shadow
 
+> [!IMPORTANT]
+> If you are looking for **NoShadow** updated for the 1.20.5 **snapshots**, check out the [feat/1.20.5](https://github.com/PuckiSilver/NoShadow/tree/feat/mc-1.20.5) branch!
+
 ## **Overview**
 By setting the **text color** to `#4e5c24` (78, 92, 36) the shadow of the text will no longer show.
 
