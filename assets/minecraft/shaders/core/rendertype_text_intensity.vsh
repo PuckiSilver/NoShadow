@@ -32,7 +32,10 @@ void main() {
         Position.z == 50.03 ||   // Opened Chat
         Position.z == 2650.03 || // Closed Chat
         Position.z == 200.03 ||  // Advancement Screen
-        Position.z == 400.03     // Items
+        Position.z == 400.03 ||  // Items
+        Position.z == 1000.03 || // Bossbar
+        Position.z == 2800.03 || // Scoreboard List
+        Position.z == 2000       // Scoreboard Sidebar (Has no shadow, remove tint for consistency)
         )) { // Regular text
         vertexColor.rgb = texelFetch(Sampler2, UV2 / 16, 0).rgb; // Remove color from no shadow marker
     } else if (iColor == ivec3(19, 23, 9) && (
@@ -41,7 +44,9 @@ void main() {
         Position.z == 50 ||   // Opened Chat
         Position.z == 2650 || // Closed Chat
         Position.z == 200 ||  // Advancement Screen
-        Position.z == 400     // Items
+        Position.z == 400 ||  // Items
+        Position.z == 1000 || // Bossbar
+        Position.z == 2800    // Scoreboard List
         )) { // Shadow
         gl_Position = vec4(2,2,2,1); // Move shadow off screen
     }
