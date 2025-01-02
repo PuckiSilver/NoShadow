@@ -33,8 +33,8 @@ void main() {
         roughlyEquals(Position.z, 2200.03) || // Actionbar
         roughlyEquals(Position.z, 2400.06) || // Subtitle
         roughlyEquals(Position.z, 2400.12) || // Title
-        roughlyEquals(Position.z, 50.03) ||   // Opened Chat
-        roughlyEquals(Position.z, 2650.03) || // Closed Chat
+        roughlyEquals(Position.z, 51.03) ||   // Opened Chat
+        roughlyEquals(Position.z, 2651.03) || // Closed Chat
         roughlyEquals(Position.z, 200.03) ||  // Advancement Screen
         roughlyEquals(Position.z, 400.03) ||  // Items
         roughlyEquals(Position.z, 1000.03) || // Bossbar
@@ -45,8 +45,8 @@ void main() {
     } else if (iColor == ivec3(19, 23, 9) && (
         roughlyEquals(Position.z, 2200) || // Actionbar
         roughlyEquals(Position.z, 2400) || // Subtitle | Title
-        roughlyEquals(Position.z, 50) ||   // Opened Chat
-        roughlyEquals(Position.z, 2650) || // Closed Chat
+        roughlyEquals(Position.z, 51) ||   // Opened Chat
+        roughlyEquals(Position.z, 2651) || // Closed Chat
         roughlyEquals(Position.z, 200) ||  // Advancement Screen
         roughlyEquals(Position.z, 400) ||  // Items
         roughlyEquals(Position.z, 1000) || // Bossbar
