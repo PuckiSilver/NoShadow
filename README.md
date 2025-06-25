@@ -1,3 +1,9 @@
+> [!WARNING]
+> In minecraft versions 1.21.4 and up, use `shadow_color` instead!
+> ```mcfunction
+> title @s actionbar [{"text":"This text has shadow "},{"text":"but this text does not :D","shadow_color":0}]
+> ```
+
 # **NoShadow**
 Just a simple shader to remove actionbar and title shadow
 
