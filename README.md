@@ -3,6 +3,7 @@
 > ```mcfunction
 > title @s actionbar [{"text":"This text has shadow "},{"text":"but this text does not :D","shadow_color":0}]
 > ```
+> The pack is made to still load but it won't remove shadow anymore.
 
 # **NoShadow**
 Just a simple shader to remove actionbar and title shadow
@@ -20,7 +21,9 @@ A command could look like this:
 title @s actionbar [{"text":"This text has shadow ","color":"white"},{"text":"but this text does not :D","color":"#4e5c24"}]
 ```
 
-Feel free to take the [shader files](assets/minecraft/shaders/core/) and drop them into **your resource pack**.
+### **Add to other resource pack**
+1. Copy both overlay folders ([`psns_16_31`](psns_16_31) and [`psns_32_42`](psns_32_42)) into your resource pack next to your `assets` folder.
+2. Copy the `"overlays"` section from the [`pack.mcmeta`](pack.mcmeta) into your own `pack.mcmeta`.
 
 [**Credit** is not needed](LICENSE) but always appreciated.
 

@@ -1,6 +1,16 @@
 {
   "pack": {
     "pack_format": 42,
+    "supported_formats": [16, 42],
     "description": "Remove shadows with color #4e5c24 (78, 92, 36)"
+  },
+  "overlays": {
+    "entries": [{
+      "formats": [32, 42],
+      "directory": "psns_32_42"
+    }, {
+      "formats": [16, 31],
+      "directory": "psns_16_31"
+    }]
   }
 }

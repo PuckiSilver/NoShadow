@@ -28,7 +28,7 @@ void main() {
     vertexColor = Color * texelFetch(Sampler2, UV2 / 16, 0);
     texCoord0 = UV0;
     // NoShadow behavior (https://github.com/PuckiSilver/NoShadow)
-    ivec3 iColor = ivec3(Color.xyz * 255 + vec3(0.5));
+    ivec3 iColor = ivec3(Color.xyz * 255.1);
     if (iColor == ivec3(78, 92, 36) && (
         roughlyEquals(Position.z, 2200.03) || // Actionbar
         roughlyEquals(Position.z, 2400.06) || // Subtitle
