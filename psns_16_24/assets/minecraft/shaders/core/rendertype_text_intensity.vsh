@@ -11,6 +11,7 @@ uniform sampler2D Sampler2;
 
 uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
+uniform mat3 IViewRotMat;
 uniform int FogShape;
 
 out float vertexDistance;
@@ -24,28 +25,30 @@ bool roughlyEquals(float a, float b) {
 void main() {
     // vanilla behavior
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
-    vertexDistance = fog_distance(Position, FogShape);
+    vertexDistance = fog_distance(ModelViewMat, IViewRotMat * Position, FogShape);
     vertexColor = Color * texelFetch(Sampler2, UV2 / 16, 0);
     texCoord0 = UV0;
     // NoShadow behavior (https://github.com/PuckiSilver/NoShadow)
     ivec3 iColor = ivec3(Color.xyz * 255.1);
     if (iColor == ivec3(78, 92, 36) && (
-        roughlyEquals(Position.z, 2200.03) || // Actionbar
-        roughlyEquals(Position.z, 2400.06) || // Subtitle
-        roughlyEquals(Position.z, 2400.12) || // Title
-        roughlyEquals(Position.z, 50.03) ||   // Opened Chat
-        roughlyEquals(Position.z, 2650.03) || // Closed Chat
+        roughlyEquals(Position.z, 0.03) ||    // Actionbar
+        roughlyEquals(Position.z, 0.06) ||    // Subtitle
+        roughlyEquals(Position.z, 0.12) ||    // Title
+        roughlyEquals(Position.z, 100.03) ||  // Chat
         roughlyEquals(Position.z, 200.03) ||  // Advancement Screen
-        roughlyEquals(Position.z, 400.03)     // Items
+        roughlyEquals(Position.z, 400.03) ||  // Items
+        roughlyEquals(Position.z, 1000.03) || // Bossbar
+        roughlyEquals(Position.z, 2800.03) || // Scoreboard List
+        roughlyEquals(Position.z, 2000)       // Scoreboard Sidebar (Has no shadow, remove tint for consistency)
         )) { // Regular text
         vertexColor.rgb = texelFetch(Sampler2, UV2 / 16, 0).rgb; // Remove color from no shadow marker
     } else if (iColor == ivec3(19, 23, 9) && (
-        roughlyEquals(Position.z, 2200) || // Actionbar
-        roughlyEquals(Position.z, 2400) || // Subtitle | Title
-        roughlyEquals(Position.z, 50) ||   // Opened Chat
-        roughlyEquals(Position.z, 2650) || // Closed Chat
+        roughlyEquals(Position.z, 0) ||    // Actionbar | Subtitle | Title
+        roughlyEquals(Position.z, 100) ||  // Chat
         roughlyEquals(Position.z, 200) ||  // Advancement Screen
-        roughlyEquals(Position.z, 400)     // Items
+        roughlyEquals(Position.z, 400) ||  // Items
+        roughlyEquals(Position.z, 1000) || // Bossbar
+        roughlyEquals(Position.z, 2800)    // Scoreboard List
         )) { // Shadow
         gl_Position = vec4(2,2,2,1); // Move shadow off screen
     }

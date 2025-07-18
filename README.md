@@ -22,7 +22,7 @@ title @s actionbar [{"text":"This text has shadow ","color":"white"},{"text":"bu
 ```
 
 ### **Add to other resource pack**
-1. Copy both overlay folders ([`psns_16_31`](psns_16_31) and [`psns_32_42`](psns_32_42)) into your resource pack next to your `assets` folder.
+1. Copy both overlay folders ([`psns_16_24`](psns_16_24) and [`psns_25_42`](psns_25_42)) into your resource pack next to your `assets` folder.
 2. Copy the `"overlays"` section from the [`pack.mcmeta`](pack.mcmeta) into your own `pack.mcmeta`.
 
 [**Credit** is not needed](LICENSE) but always appreciated.
